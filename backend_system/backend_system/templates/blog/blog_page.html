@@ -1,0 +1,343 @@
+{% load wagtailcore_tags %}
+{% load static  %}
+
+{% block body_class %}
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Corona Virus</title>
+<meta name="language" content="en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="" />
+<meta name="description" content="">
+<meta property="og:type" content="website" />
+<meta property=og:title content="Corona Virus Cure">
+<meta name="og:description" content="Health blog website">
+<meta property="og:url" content="" />
+
+<meta property=og:site_name content=coronacuremission>
+<link rel="icon" type="image/png" href="{%static  'images/favicon.png' %}" sizes="16x16" />
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+<link rel="stylesheet"  type="text/css" href="{% static 'css/allinone.css' %}">
+<link rel="stylesheet"  type="text/css" href="{% static  'css/custom/singleblog.css' %}">
+<link rel="stylesheet"  type="text/css" href="{% static  'css/custom/nav.css' %}">
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/fb_sdk.js' %}"></script>
+<script  type="module"  src="{% static 'js/custom/blogpage.js' %}"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e9f0ec881693d0012e58872&product=inline-share-buttons" async="async"></script>
+
+
+</head>
+
+<body>
+	<!--Navigations -->
+	<div class="container-fluid">
+		<div class="row row0">
+		
+		
+		<div class="col-md-3">
+		  <h1>COVID 19 LIVE UPDATES</h1>
+		</div>
+		<div class="col-md-2">
+			<button class="button btnlive" id="totalcase">&nbsp; &nbsp; <b>Total Cases</b></button>
+		</div>
+		
+		<div class="col-md-2">
+			<button class="button btnlive" id="totaldeaths">&nbsp; &nbsp; <b>Recovered</b></button>
+		</div>
+		
+		<div class="col-md-3">
+			<button class="button btnlive" id="totalrec">&nbsp; &nbsp; <b>Deaths</b></button>
+		</div>
+		
+		<div class="col-md-2">
+		 <button class="button btnlive btnview" id="toggleVisibilityButton"><b>Covid 19 Dashboard</b></button>
+		</div>
+		
+		
+		<div class="col-md-12">
+		 <div class="row rowtable">
+		 <div class="col-md-4">
+		<div class="table-responsive"> 
+		<div id="displaytable" style="display:none"><br>
+		<h1>International</h1>
+		<br>
+		  <table class="table">
+			<thead>
+			  <tr>
+				<th>Country</th>
+				<th class="totalCas"> Total Cases</th>
+				
+				<th class="recover">Recovered</th>
+				<th class="deaths" > Deaths</th>
+			  </tr>
+			</thead>
+			<tbody id="global" >
+			   
+			</tbody>
+		  </table>
+		  </div>
+		</div>
+		 </div>
+		 
+		 <div class="col-md-4">
+		<div class="table-responsive"> 
+		<div id="displaytable2" style="display:none"><br>
+		<h1>National</h1>
+		<br>
+		  <table class="table">
+			<thead>
+			  <tr>
+				<th>States</th>
+				<th class="totalCas"> Total Cases</th>
+				
+				<th class="recover">Recovered</th>
+				<th class="deaths" > Deaths</th>
+			  </tr>
+			</thead>
+			<tbody id="nation">
+			    
+			</tbody>
+		  </table>
+		  </div>
+		</div>
+		 </div>
+		  
+		 <div class="col-md-4">
+		<div class="table-responsive"> 
+		<div id="displaytable3" style="display:none"><br>
+		<h1>Maharashtra</h1><br>
+		  <table class="table">
+			<thead>
+			  <tr>
+				<th>Areas</th>
+				<th class="totalCas"> Total Cases</th>
+				
+				<th class="recover">Recovered</th>
+				<th class="deaths" > Deaths</th>
+			  </tr>
+			</thead>
+			<tbody id="locals">
+			  
+			   
+			</tbody>
+		  </table>
+		  </div>
+		</div>
+		 </div>
+		 
+		  </div>
+		</div>
+		
+		<div class="col-md-3"></div>
+		 
+	  </div>
+	</div>
+
+	<!--Navigations -->
+
+	<span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
+<nav class="navbar navbar-expand-md navbar-dark  sticky-top fixed-top">
+	<a class="navbar-brand" href="/" title=""><img src="{%static  'images/logo4.png' %}" class="logo" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link expand current" title="" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link expand" title="" href="/blog-index-page">OUR BLOGS</a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link expand" title=" Portfolio" href="#section1">CONTACT US</a>
+	  </li>
+	   
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+	 <div class="row row03">
+		<div class="col-md-12 col-12">
+
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid">
+	<div class="row roow">
+		<div class="col-xs-12 col-md-12 col-lg-8">
+			<div class="row ">
+				<div class="col-xs-12 col-md-12 cont-content">
+					<img id="header" src="" class="img-responsive img-bio" alt="Image placeholder">
+					<div class="meta">
+						<span class="mr-2" id="date"></span> &bullet;&bullet;&bullet;
+						<span class="ml-2"><span class="fa fa-comments"></span></span>
+					</div>
+				
+					<div class="blog-content" id="blog-content">
+						<!--Blog start here--->
+						<h1>{{ page.title }}</h1>
+						{{ page.body|richtext }}
+ 
+					</div>
+					<!--Blog end here--->
+					<hr>
+					<!---Social Media plugin-->
+					<div id="fb-share" ></div>
+					<div class="sharethis-inline-share-buttons"></div>
+
+
+					
+					<div id="fb-comments-section" ></div>
+
+					<!---Social Media plugin-->
+  
+				</div>
+			</div>
+		</div>
+ 
+	<div class="col-xs-12 col-md-12 col-lg-4 sidebar">
+
+		<div class="sidebar-box">
+			 <img src="{%static  'images/handwash.jpg' %}" class="img-responsive imgsidebanner" alt="Image placeholder">
+		</div>
+
+		<div class="sidebar-box sb-bio">
+			<h1 class="bio-h1">About Corona Virus</h1>
+			<p><br> Boot camps have its supporters andit sdetractors.
+			Some people do not understand why you should have to spend money on
+			boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+			<p class="sb-bio-social">
+                 <a href="https://facebook.com/Corona-cure-mission-101068118237934/" class="p-2"><span class="fa fa-facebook"></span></a>
+                 <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                 <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                 <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
+            </p>
+		</div>
+ 
+		<!-- <div class="sidebar-box sb-category">
+			<h1 class="cat">Category</h1>
+
+			<div class="inner-category">
+				<p><a href="blog-single.html" class="sb-cat-a">Symptoms (3)</a></p>
+
+				<p><a href="blog-single.html" class="sb-cat-a">Disease(8)</a></p>
+
+				<p><a href="blog-single.html" class="sb-cat-a">Vaccine (3)</a></p>
+
+				<p><a href="blog-single.html" class="sb-cat-a">Medicine (3)</a></p>
+
+				<p><a href="blog-single.html" class="sb-cat-a">H20 (3)</a></p>
+
+			</div>
+		</div> -->
+
+		<div class="col-xs-12 col-md-12 cont-comm1">
+
+			<h1>Leave a comment</h1><br><br>
+
+			<div class="col-xs-12 col-md-12 box-comment">
+				<div >
+					<form class="com-st">
+					<input type="text" name="firstname" placeholder="Name">
+					 <br>
+					<input type="text" name="lastname" placeholder="Email">
+					<br>
+					<input type="text" name="lastname" placeholder="Number">
+					<br>
+					<textarea id="subject" name="subject" placeholder="Comment" style="height:100px"></textarea>
+					<br><br>
+					<input type="submit" value="Submit">
+					</form>
+
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+	</div>
+</div>
+
+<div class="container-fluid" id="section1">
+	<div class="row fotter">
+	  <div class="col-lg-4 col-md-12 col-12 section1">
+		<div>
+		  <h3 class="expand">About</h3>
+		  <p>
+		   Our mission is to promote health, keep the world safe and serve the vulnerable,with complete information regrading the same.
+		  </p>
+		</div>
+	  </div>
+	  <div class="col-lg-4 col-md-12 col-12 section2">
+		  <div class="social">
+			  <h3 class="expand">Stay Connected On</h3>
+			  <ul class="ulx">
+				<a href="https://facebook.com/Corona-cure-mission-101068118237934/"><i class="ti ti-facebook"  aria-hidden="true">
+				</i></a>
+				<a href=""><i class="ti ti-twitter-alt" aria-hidden="true"></i></a>
+				<a href=""><i class="ti ti-instagram" aria-hidden="true"></i></a>
+			  </ul>
+			</div>
+
+	  </div>
+
+	  <div class="col-lg-4 col-md-12 col-12 section3">
+		<h3 class="expand">Contact Me</h3>
+		<ul class="ulx3">
+	  
+		  <li><i class="fa fa-envelope"></i>info@coronacuremission.com</li>
+		</ul>
+	  </div>
+	</div>
+  </div>
+
+
+
+<div class="fottercr">
+  <p>Copyright © Golatkar Empires Private Limited 2020 ,All Rights Reserved </p>
+  </div>
+
+	  <script>
+	
+		document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {    
+		   if (document.getElementById("displaytable").style.display === "none") 		     
+			document.getElementById("displaytable").style.display = "block";
+		   else document.getElementById("displaytable").style.display = "none";
+		});
+		
+		document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {    
+		   if (document.getElementById("displaytable2").style.display === "none") 		     
+			document.getElementById("displaytable2").style.display = "block";
+		   else document.getElementById("displaytable2").style.display = "none";
+		});
+		
+		document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {    
+		   if (document.getElementById("displaytable3").style.display === "none") 		     
+			document.getElementById("displaytable3").style.display = "block";
+		   else document.getElementById("displaytable3").style.display = "none";
+		});
+		</script>
+
+<script src="{% static 'js/custom/nav.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock %}
